@@ -1,0 +1,37 @@
+
+  <div class="char-container">
+    <div class="char-col">
+      <app-input-field-number
+        name="Strength"
+        [value]="getCharacteristic('st')"
+        (valueChange)="update('st',$event)"
+      ></app-input-field-number>
+      <app-input-field-number
+        name="Speed"
+        [value]="getCharacteristic('sp')"
+        (valueChange)="update('sp',$event)"
+      ></app-input-field-number>
+      <app-input-field-number
+        name="Intelligence"
+        [value]="getCharacteristic('i')"
+        (valueChange)="update('i',$event)"
+      ></app-input-field-number>
+    </div>
+    <div class="char-col">
+      <app-input-field-number
+        name="Magic"
+        [value]="getCharacteristic('m')"
+        (valueChange)="update('m',$event)"
+      ></app-input-field-number>
+      <app-input-field-number
+        name="Utilites"
+        [value]="getCharacteristic('u')"
+        (valueChange)="update('u',$event)"
+      ></app-input-field-number>
+      <app-input-field-number
+        name="Defence"
+        [value]="getCharacteristic('d')"
+        (valueChange)="update('d',$event)"
+      ></app-input-field-number>
+    </div>
+  </div>

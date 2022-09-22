@@ -1,0 +1,41 @@
+<div *ngIf="hero" class="card" [style.backgroundColor]="hero.mainColor" [style.border]="'5px ' + hero.secondaryColor + ' solid'">
+  <app-field
+    name="Name"
+    [value]="getName()"
+  ></app-field>
+  <app-field
+    name="Planet"
+    [value]="getPlanet()"
+  ></app-field>
+  <div class="char-container">
+    <div class="char-col">
+      <app-field
+        name="Strength"
+        [value]="getCharacteristic('st')"
+      ></app-field>
+      <app-field
+        name="Speed"
+        [value]="getCharacteristic('sp')"
+      ></app-field>
+      <app-field
+        name="Intelligence"
+        [value]="getCharacteristic('i')"
+      ></app-field>
+    </div>
+    <div class="char-col">
+      <app-field
+        name="Magic"
+        [value]="getCharacteristic('m')"
+      ></app-field>
+      <app-field
+        name="Utilites"
+        [value]="getCharacteristic('u')"
+      ></app-field>
+      <app-field
+        name="Defence"
+        [value]="getCharacteristic('d')"
+      ></app-field>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,60 @@
+<div class="split-page">
+  <div class="left-page-side">
+    <app-title [title]="getTitle()"></app-title>
+    <app-heaer-button
+      text="New"
+      (onClick)="new()"
+    ></app-heaer-button>
+    <app-search
+      (Search)="onSearch($event)"
+    ></app-search>
+  </div>
+  <div class="right-page-side">
+    <div class="hero-form" *ngIf="hero">
+      <app-input-field
+        name="Name"
+        [value]="getName()"
+        (valueChange)="setName($event)"
+      ></app-input-field>
+      <app-input-field
+        name="Planet"
+        [(value)]="hero.planet"
+      ></app-input-field>
+      <app-input-field
+        name="Alias (Optional)"
+        [(value)]="hero.aliese"
+      ></app-input-field>
+      <app-input-field
+        name="Main Color"
+        [(value)]="hero.mainColor"
+      ></app-input-field>
+      <app-input-field
+        name="Secondary"
+        [(value)]="hero.secondaryColor"
+      ></app-input-field>
+      <app-input-field-characteristics [characteristics]="getCharacteristics()" (characteristicsChange)="setCharacteristics($event)">
+      </app-input-field-characteristics>
+      <div class="char-button-wrapper">
+        <app-button
+          class="char-button"
+          *ngIf="isNew"
+          text="Create"
+          (onClick)="create()"
+        ></app-button>
+        <app-button
+          class="char-button"
+          *ngIf="!isNew"
+          text="Update"
+          (onClick)="update()"
+        ></app-button>
+        <app-button
+          class="char-button"
+          *ngIf="!isNew"
+          text="Delete"
+          (onClick)="delete()"
+        ></app-button>
+      </div>
+    </div>
+
+  </div>
+</div>

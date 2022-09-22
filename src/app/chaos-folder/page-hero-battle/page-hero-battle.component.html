@@ -1,0 +1,19 @@
+<div *ngIf="allHeroes" >
+  <div class="battle-zone">
+    <div class="hero-container">
+      <app-hero-card
+        [hero]="firstHero | async"
+      ></app-hero-card>
+      <p *ngIf="winner  != null">{{(winner == 1) ?  "Winner" : (winner == 2) ?  "Loser" : 'Tie'}}</p>
+    </div>
+    <app-title [title]="getTitle()"></app-title>
+    <div class="hero-container">
+      <app-hero-card
+        [hero]="secondHero | async"
+      ></app-hero-card>
+      <p *ngIf="winner != null">{{(winner == 2) ?  "Winner" : (winner == 1) ?  "Loser" : 'Tie'}}</p>
+
+    </div>
+  </div>
+  <app-heaer-button [text]="(winner == null) ? 'Start Fight' : 'New Challenger'" (onClick)="fight()" [style.margin]="'auto'" [style.display]="'block'" [style.width]="'100px'"></app-heaer-button>
+</div>
